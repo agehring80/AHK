@@ -1,3 +1,4 @@
+#MaxThreadsPerHotkey, 2
 #Persistent
 SetNumLockState, AlwaysOn
 
@@ -20,8 +21,8 @@ e::Send, €
 +[::Send, Ü		;easier on german layout
 -::Send, ß		;easier on german layout
 
-Right::Send {volume_up}
-Left::Send {volume_down}
+Right::Send {Volume_Up}
+Left::Send {Volume_Down}
 
 ^PgUp::                                ; Convert Clip to upper
  StringUpper Clipboard, Clipboard
@@ -33,8 +34,7 @@ RETURN
  Send %Clipboard%
 RETURN
 
-^v::SendRaw %clipboard%
-
+^v::SendRaw %Clipboard%
 
 ;Numpad Keyboard Mouse
 SC04F::MouseMove, -1, 1, 0, R  ; Numpad1 key down left
@@ -47,20 +47,28 @@ SC04D::MouseMove, 1, 0, 0, R   ; Numpad6 key right
 SC047::MouseMove, -1, -1, 0, R ; Numpad7 key up left
 SC048::MouseMove, 0, -1, 0, R  ; Numpad8 key up
 SC049::MouseMove, 1, -1, 0, R  ; Numpad9 key up right
+Pause::
+    Fire := !Fire
+    While Fire {
+        Send {LButton}
+        Sleep 1
+    }
+RETURN
 SC052::% (toggle := !toggle) ? toggleon() : toggleoff()  ; Numpad0 Toggle LButton
 toggleon()
-  {
+    {
 	  Hotkey, NumpadEnter, on
 	  Send {LButton Down}
 	  Tooltip, Left Button Down`rNumpadEnter to cancel, 20,20
 	}
-
+RETURN
 toggleoff()
 	{	   
 	  Hotkey, NumpadEnter, off
 	  Send {LButton Up}
 	  Tooltip
 	}
+RETURN
 #If
 
 NumpadEnter::   ; Escape Hotkey
@@ -68,4 +76,4 @@ NumpadEnter::   ; Escape Hotkey
   toggle = 0           ; set toogle to off
   Send {LButton Up}    ; release LButton
   Hotkey, NumpadEnter, off
-Return
+RETURN
