@@ -1,0 +1,135 @@
+; =====================================================================
+;  SC      VK_X (ANSI)  VK_X (ISO)  AutoHotkey Name     KeyName
+; =====================================================================
+;
+; ======== Top row ====================================================
+SC001 =  ; ESCAPE       ESCAPE      Escape (or Esc)     Escape
+SC03b =  ; F1           F1          F1                  F1
+SC03c =  ; F2           F2          F2                  F2
+SC03d =  ; F3           F3          F3                  F3
+SC03e =  ; F4           F4          F4                  F4
+SC03f =  ; F5           F5          F5                  F5
+SC040 =  ; F6           F6          F6                  F6
+SC041 =  ; F7           F7          F7                  F7
+SC042 =  ; F8           F8          F8                  F8
+SC043 =  ; F9           F9          F9                  F9
+SC044 =  ; F10          F10         F10                 F10
+SC057 =  ; F11          F11         F11                 F11
+SC058 =  ; F12          F12         F12                 F12
+SC137 =  ; SNAPSHOT     SNAPSHOT    PrintScreen         Print Screen
+SC054 =  ;                                              System Request
+SC046 =  ; SCROLL       SCROLL      ScrollLock          Scroll Lock
+SC045 =  ; PAUSE        PAUSE       Pause               Pause
+SC145 =  ; CANCEL       CANCEL      CtrlBreak           Break
+SC15e =  ;                                              Power
+SC15f =  ;                          Sleep               Sleep
+SC163 =  ;                                              Wake
+; =====================================================================
+;
+; ======== Number row =================================================
+SC029 =  ; OEM_3        OEM_5                           US QWERTY `~
+SC002 =  ; KEY_1        KEY_1                           US QWERTY 1!
+SC003 =  ; KEY_2        KEY_2                           US QWERTY 2@
+SC004 =  ; KEY_3        KEY_3                           US QWERTY 3#
+SC005 =  ; KEY_4        KEY_4                           US QWERTY 4$
+SC006 =  ; KEY_5        KEY_5                           US QWERTY 5%
+SC007 =  ; KEY_6        KEY_6                           US QWERTY 6^
+SC008 =  ; KEY_7        KEY_7                           US QWERTY 7&
+SC009 =  ; KEY_8        KEY_8                           US QWERTY 8*
+SC00a =  ; KEY_9        KEY_9                           US QWERTY 9(
+SC00b =  ; KEY_0        KEY_0                           US QWERTY 0)
+SC00c =  ; OEM_MINUS    OEM_PLUS                        US QWERTY -_
+SC00d =  ; OEM_PLUS     OEM_4                           US QWERTY =+
+SC00e =  ; BACK         BACK        Backspace (or BS)   Backspace
+; =====================================================================
+;
+; ======== Top letter row =============================================
+SC00f =  ; TAB          TAB         Tab                 Tab
+SC010 =  ; KEY_Q        KEY_Q                           US QWERTY qQ
+SC011 =  ; KEY_W        KEY_W                           US QWERTY wW
+SC012 =  ; KEY_E        KEY_E                           US QWERTY eE
+SC013 =  ; KEY_R        KEY_R                           US QWERTY rR
+SC014 =  ; KEY_T        KEY_T                           US QWERTY tT
+SC015 =  ; KEY_Y        KEY_Y                           US QWERTY yY
+SC016 =  ; KEY_U        KEY_U                           US QWERTY uU
+SC017 =  ; KEY_I        KEY_I                           US QWERTY iI
+SC018 =  ; KEY_O        KEY_O                           US QWERTY oO
+SC019 =  ; KEY_P        KEY_P                           US QWERTY pP
+SC01a =  ; OEM_4        OEM_6                           US QWERTY [{
+SC01b =  ; OEM_6        OEM_1                           US QWERTY ]}
+; =====================================================================
+;
+; ======== Middle letter row ==========================================
+SC03A =  ; CAPITAL      CAPITAL     CapsLock            Caps Lock
+SC01e =  ; KEY_A        KEY_A                           US QWERTY aA
+SC01f =  ; KEY_S        KEY_S                           US QWERTY sS
+SC020 =  ; KEY_D        KEY_D                           US QWERTY dD
+SC021 =  ; KEY_F        KEY_F                           US QWERTY fF
+SC022 =  ; KEY_G        KEY_G                           US QWERTY gG
+SC023 =  ; KEY_H        KEY_H                           US QWERTY hH
+SC024 =  ; KEY_J        KEY_J                           US QWERTY jJ
+SC025 =  ; KEY_K        KEY_K                           US QWERTY kK
+SC026 =  ; KEY_L        KEY_L                           US QWERTY lL
+SC027 =  ; OEM_1        OEM_3                           US QWERTY ;:
+SC028 =  ; OEM_7        OEM_7                           US QWERTY '"
+SC02b =  ; OEM_5        OEM_2                           US QWERTY \|
+SC01c =  ; RETURN       RETURN      Enter (or Return)   Enter
+; =====================================================================
+;
+; ======== Bottom letter row ==========================================
+SC02a =  ; LSHIFT       LSHIFT      LShift              Left Shift
+SC056 =  ;              OEM_102                         OEM_102
+SC02c =  ; KEY_Z        KEY_Z                           US QWERTY zZ
+SC02d =  ; KEY_X        KEY_X                           US QWERTY xX
+SC02e =  ; KEY_C        KEY_C                           US QWERTY cC
+SC02f =  ; KEY_V        KEY_V                           US QWERTY vV
+SC030 =  ; KEY_B        KEY_B                           US QWERTY bB
+SC031 =  ; KEY_N        KEY_N                           US QWERTY nN
+SC032 =  ; KEY_M        KEY_M                           US QWERTY mM
+SC033 =  ; OEM_COMMA    OEM_COMMA                       US QWERTY ,<
+SC034 =  ; OEM_PERIOD   OEM_PERIOD                      US QWERTY .>
+SC035 =  ; OEM_2        OEM_MINUS                       US QWERTY /?
+SC036 =  ; RSHIFT       RSHIFT      RShift              Right Shift
+; =====================================================================
+;
+; ======== Bottom row =================================================
+SC01d =  ; LCONTROL     LCONTROL    LControl (or LCtrl) Left Control
+SC15b =  ; LWIN         LWIN        LWin                Left Win
+SC038 =  ; LMenu        LMenu       LAlt                Left Alt
+SC039 =  ; SPACE        SPACE       Space               Space
+SC138 =  ; RMenu        RMenu       RAlt                Right Alt
+SC15d =  ; APPS         APPS        AppsKey             Context menu
+SC11d =  ; RCONTROL     RCONTROL    RControl (or RCtrl) Right Control
+; =====================================================================
+;
+; ======== Cursor Control =============================================
+SC152 =  ; INSERT       INSERT      Insert (or Ins)     Insert
+SC153 =  ; DELETE       DELETE      Delete (or Del)     Del
+SC147 =  ; HOME         HOME        Home                Home
+SC14f =  ; END          END         End                 End
+SC149 =  ; PRIOR        PRIOR       PgUp                Page up
+SC151 =  ; NEXT         NEXT        PgDn                Page down
+SC148 =  ; UP           UP          Up                  Up arrow
+SC14b =  ; LEFT         LEFT        Left                Left arrow
+SC150 =  ; DOWN         DOWN        Down                Down arrow
+SC14d =  ; RIGHT        RIGHT       Right               Right arrow
+; =====================================================================
+;
+; ======== Numeric pad ================================================
+SC052 =  ; NUMPAD0      NUMPAD0     Numpad0             Num0
+SC04f =  ; NUMPAD1      NUMPAD1     Numpad1             Num1
+SC050 =  ; NUMPAD2      NUMPAD2     Numpad2             Num2
+SC051 =  ; NUMPAD3      NUMPAD3     Numpad3             Num3
+SC04b =  ; NUMPAD4      NUMPAD4     Numpad4             Num4
+SC04c =  ; NUMPAD5      NUMPAD5     Numpad5             Num5
+SC04d =  ; NUMPAD6      NUMPAD6     Numpad6             Num6
+SC047 =  ; NUMPAD7      NUMPAD7     Numpad7             Num7
+SC048 =  ; NUMPAD8      NUMPAD8     Numpad8             Num8
+SC049 =  ; NUMPAD9      NUMPAD9     Numpad9             Num9
+SC145 =  ; NUMLOCK      NUMLOCK     NumLock             NumLock
+SC035 =  ; DIVIDE       DIVIDE      NumpadDiv           Num /
+SC037 =  ; MULTIPLY     MULTIPLY    NumpadMult          Num *
+SC04a =  ; SUBTRACT     SUBTRACT    NumpadSub           Num -
+SC04e =  ; ADD          ADD         NumpadAdd           Num +
+SC053 =  ; DECIMAL      DECIMAL     NumpadDot           Num decimal
+SC11c =  ; ENTER        ENTER       NumpadEnter         Num enter
