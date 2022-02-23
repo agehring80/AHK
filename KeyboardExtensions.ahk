@@ -41,6 +41,13 @@ RETURN
   Send %Clipboard%
 RETURN
 
+; Reverse Clip
+^r::
+  strvar := Clipboard
+  DllCall("msvcrt.dll\_wcsrev", "UPtr", &strvar, "CDecl")
+  Send, %strvar%
+RETURN
+
 ; Clip to KeyboardKeys (useful on fields that prevent direct insert from Clip)
 ^v::SendRaw %Clipboard% ;
 
