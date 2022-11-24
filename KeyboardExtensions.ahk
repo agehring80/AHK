@@ -25,10 +25,11 @@ s::Send, ß      ;CapsLock+s = CapsLock+s, Eszett
 +[::Send, Ü     ;easier on german layout
 -::Send, ß      ;easier on german layout
 
-; use spyxx to find a windows control message, then you can assign shortcuts to it.
-#+t::
-#PostMessage, 0x0111, 0x00001303, 0x00000000,,DOSBox-X ; Turbo
-#RETURN
+; use the program spyxx to find a windows control message, then you can assign shortcuts to it.
+; Example:
+; +t::
+; PostMessage, 0x0111, 0x00001303, 0x00000000,,DOSBox-X ; Turbo
+; RETURN
 
 ^t::
 FormatTime, CurrentDateTime,, dd.MM.yyyy
