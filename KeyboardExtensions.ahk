@@ -2,9 +2,9 @@
 #Persistent
 SetNumLockState, AlwaysOn
 
-; CapsLock is remapped (in WinReregistry) to F16 with the tool SharpKeys !
+; CapsLock is remapped (in WinReregistry) to F17 with the tool SharpKeys !
 
-#If, GetKeyState("F16", "P") ; For all following functions CapsLock is necessary as activator
+#If, GetKeyState("F17", "P") ; For all following functions CapsLock is necessary as activator
 Space::SetCapsLockState % !GetKeyState("CapsLock", "T") ; Toggle the real CapsLockState with CapslockKey + Space 
 ; write german (annoying) umlauts when US layout is used with any keyboard
 a::Send, ä
@@ -24,6 +24,16 @@ s::Send, ß      ;CapsLock+s = CapsLock+s, Eszett
 +SC027::Send, Ö     ;easier on german layout
 +[::Send, Ü     ;easier on german layout
 -::Send, ß      ;easier on german layout
+
+; use spyxx to find a windows control message, then you can assign shortcuts to it.
+#+t::
+#PostMessage, 0x0111, 0x00001303, 0x00000000,,DOSBox-X ; Turbo
+#RETURN
+
+^t::
+FormatTime, CurrentDateTime,, dd.MM.yyyy
+SendInput %CurrentDateTime% mailaddress
+RETURN
 
 ; always useful
 Right::Send {Volume_Up}
@@ -50,6 +60,23 @@ RETURN
 
 ; Clip to KeyboardKeys (useful on fields that prevent direct insert from Clip)
 ^v::SendRaw %Clipboard% ;
+
+; Strikethrough Clip
+^F11::
+   str := Clipboard    
+   out := "" 
+   loop % strlen(str)
+      out .= SubStr(str, A_Index, 1) Chr(0x336)
+   Send %out%
+RETURN
+
+; Column ClipBoard Insert
+^F12::
+   Send {Down}
+   length := StrLen(Clipboard)
+   Send {Left %length%}
+   SendRaw %Clipboard% ;
+RETURN
 
 ;Numpad Keyboard Mouse
 SC04F::MouseMove, -1, 1, 0, R  ; Numpad1 key down left
