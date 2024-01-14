@@ -2,7 +2,7 @@
 Persistent
 SetNumLockState("AlwaysOn")
 
-; CapsLock is remapped (in WinReregistry) to F17 with the tool SharpKeys !
+; CapsLock is remapped (in WinRegistry) to F17 with the tool SharpKeys !
 
 #HotIf GetKeyState("F17", "P") ; For all following functions CapsLock is necessary as activator
 Space::SetCapsLockState(!GetKeyState("CapsLock", "T")) ; Toggle the real CapsLockState with CapslockKey + Space 
@@ -24,6 +24,9 @@ s::Send("ß")      ;CapsLock+s = CapsLock+s, Eszett
 +SC027::Send("Ö")     ;easier on german layout
 +[::Send("Ü")     ;easier on german layout
 -::Send("ß")      ;easier on german layout
+
+;on my HP Elitebook (german keyboard) there is no Pause key anymore
+p::Send("{Pause}")
 
 ; use the program spyxx to find a windows control message, then you can assign shortcuts to it.
 ; Example:
@@ -102,16 +105,6 @@ SC04D::MouseMove(1, 0, 0, "R")   ; Numpad6 key right
 SC047::MouseMove(-1, -1, 0, "R") ; Numpad7 key up left
 SC048::MouseMove(0, -1, 0, "R")  ; Numpad8 key up
 SC049::MouseMove(1, -1, 0, "R")  ; Numpad9 key up right
-Pause::
-{
-  Fire := !Fire
-  While Fire
-  {
-    Send("{LButton}")
-    Sleep(1)
-  }
-  RETURN
-}
 toggle:=0
 SC052::
 {
@@ -128,4 +121,39 @@ toggleoff()
   Send("{LButton Up}")
   ToolTip()
 }
+Fire:=0
+LButton::
+{
+  global
+  Send("{LButton}")
+  if not KeyWait('LButton', 'T0.25')
+  {
+    Fire := !Fire
+    While Fire
+    {
+      Send("{LButton}")
+      Sleep(1)
+    }
+  }
+  Fire:=0
+  RETURN
+}
 #HotIf
+
+;Mouse Button 4 & 5
+XButton2::Send("#v")
+XButton1::
+{
+    startTime := A_TickCount
+    while GetKeyState('XButton1', 'P')
+    {
+        if(A_TickCount - startTime > 250)
+		{
+			Send("#{TAB}")
+            return
+        }
+        Sleep(10)
+    }
+	Send("!{TAB}")
+	RETURN
+}
